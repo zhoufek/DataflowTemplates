@@ -1,6 +1,9 @@
 name: Java Tests
 
 on:
+  push:
+    branches: ['test-ga-label']
+    types: ['labeled']
   pull_request:
     branches: ['test-ga-label']
     types: ['labeled']
