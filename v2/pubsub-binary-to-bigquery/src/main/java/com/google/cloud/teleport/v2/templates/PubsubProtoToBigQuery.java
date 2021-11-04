@@ -65,7 +65,6 @@ public final class PubsubProtoToBigQuery {
   private static final TupleTag<FailsafeElement<String, String>> UDF_SUCCESS_TAG = new TupleTag<>();
   private static final TupleTag<FailsafeElement<String, String>> UDF_FAILURE_TAG = new TupleTag<>();
 
-
   private static final FailsafeElementCoder<String, String> FAILSAFE_CODER =
       FailsafeElementCoder.of(StringUtf8Coder.of(), StringUtf8Coder.of());
 
