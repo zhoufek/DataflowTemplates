@@ -7,7 +7,7 @@ on:
 
 jobs:
   spotless_check:
-    if: contains(github.event.pull_request.labels.*.name == 'test label')
+    if: contains(github.event.pull_request.labels.*.name, 'test label')
     name: Spotless Check
     timeout-minutes: 10
     runs-on: ubuntu-latest
