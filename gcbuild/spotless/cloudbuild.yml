@@ -1,0 +1,4 @@
+steps:
+- name: maven:3.8.8-openjdk-11
+  entrypoint: mvn
+  args: ['spotless:check', '-f', 'v2/pom.xml']
