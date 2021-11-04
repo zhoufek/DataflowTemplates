@@ -3,6 +3,7 @@ name: Java Tests
 on:
   pull_request:
     branches: ['test-ga-label']
+    types: [opened, synchronize, reopened, labeled]
 
 jobs:
   spotless_check:
