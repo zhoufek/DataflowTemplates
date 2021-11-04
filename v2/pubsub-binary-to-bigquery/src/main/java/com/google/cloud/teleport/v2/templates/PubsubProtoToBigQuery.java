@@ -17,6 +17,7 @@ package com.google.cloud.teleport.v2.templates;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+
 import com.google.cloud.teleport.v2.coders.FailsafeElementCoder;
 import com.google.cloud.teleport.v2.options.BigQueryCommonOptions.WriteOptions;
 import com.google.cloud.teleport.v2.options.PubsubCommonOptions.ReadSubscriptionOptions;
