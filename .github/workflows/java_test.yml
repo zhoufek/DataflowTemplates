@@ -1,0 +1,27 @@
+name: Java Tests
+
+on:
+  pull_request:
+    branches: ['test-ga-label']
+    types: ['labeled']
+
+jobs:
+  spotless_check:
+    if: ${{ github.event.label.name == 'test label' }}
+    name: Spotless Check
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          submodules: recursive
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11
+          distribution: zulu
+          cache: maven
+      - name: Run Spotless
+        run: mvn spotless:check -f v2/pom.xml
