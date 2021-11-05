@@ -15,7 +15,6 @@
  */
 package com.google.cloud.teleport.v2.templates;
 
-
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.cloud.teleport.v2.coders.FailsafeElementCoder;
