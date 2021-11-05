@@ -9,7 +9,6 @@ jobs:
     name: Spotless Check
     timeout-minutes: 10
     runs-on: ubuntu-latest
-    environment: testenv
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
