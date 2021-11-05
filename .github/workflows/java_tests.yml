@@ -1,16 +1,15 @@
 name: Java Tests
 
 on:
-  push:
-    branches: ['test-ga']
   pull_request:
-    branches: ['test-ga']
+    branches: ['test-ga-env']
 
 jobs:
   spotless_check:
     name: Spotless Check
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    environment: testenv
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
