@@ -16,9 +16,13 @@ steps:
 - name: gcr.io/cloud-builders/docker
   args: [
     'build', '--network=cloudbuild',
+    # Image is only intended to be used within the Cloud Build run.
     '-t', 'publish-images',
     '-f', 'gcbuild/publish-images/Dockerfile',
     '.'
   ]
+# We must use the image from the last step to leverage Cloud Build's access to GCR.
+# If we use Docker and `docker run publish-images`, this step will fail due to permission
+# issues.
 - name: publish-images
   entrypoint: /templates/publish-images

@@ -55,6 +55,9 @@ func publish(packageName string, image string) error {
 }
 
 func main() {
+	// Realistically, the first step will be to check if the images already exist
+	// in GCR. Packaging and pushing them is relatively expensive (multiple minutes).
+
 	for k, v := range sharedPackages {
 		for _, image := range v {
 			if err := publish(k, image); err != nil {
