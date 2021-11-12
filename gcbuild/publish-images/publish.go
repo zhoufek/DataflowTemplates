@@ -30,7 +30,7 @@ var sharedPackages = map[string][]string {
 
 func publish(packageName string, image string) error {
 	args := []string {
-		"package", "-f", "v2/pom.xml",
+		"clean", "package", "-f", "v2/pom.xml",
 		"-Dmaven.test.skip",
 		// In reality, the project would be a flag.
 		fmt.Sprintf("-Dimage=gcr.io/zhoufek-test-331019/rc/%s", image),
